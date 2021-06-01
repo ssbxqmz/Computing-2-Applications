@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>To Do List</title>
+<link rel="stylesheet" href="default.css">
+<link rel="shortcut icon" href="favicon.png">
+<script type="module" src="main.js"></script>
+
+<header>
+    <h1>Today</h1>
+</header>
+
+<main>
+    <h2>Hi, Welcome to To Do List!</h2>
+    <section class="task-pane" id="tasks">
+        <template id="user-task">
+            <button id = "task_finish" name="submitted-task" class="from-user">Task</button>
+            <button id="finish-button" class="finish">Finish</button>
+        </template>
+    <section>
+        <textarea id ="task" class="task-box" placeholder="Enter your task!"></textarea>
+        <button id = "user_new_task_button" class="add-new-task"> + New Task</button>
+        <div id="placeholder"></div>
+        <button id="user_add-task_button"> Add Task</button>
+    </section>
+</main>
+
+<nav>
+    <ul id="list-bar">
+        <li>Task priority</li>
+        <li>Unfinished Task</li>
+        <li>Finished Task</li>
+    </ul>
+</nav>

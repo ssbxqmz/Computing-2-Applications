@@ -1,0 +1,151 @@
+:root
+{
+    --topbar: 40px;
+    --task-height: 40 px;
+    --border-radius: 2.5px;
+    --button-height: 40px;
+    --button-width: 80px;
+    --compose-height: 160px;
+    --font-size: 12px;
+    --message-padding: 1em;
+    --nav-width: 150px;
+    --pane-margin: 3px;
+
+    --transition-duration: 0.167s;
+
+    --palette-accent0: #F2EA79;
+    --palette-accent1: #f2bf27;
+    --palette-accent2: #f2ac29;
+    --palette-base0: #bfbdb8;
+    --palette-base1: #f2f0e8;
+    --dark:#000000;
+    --palette-secondary0: #345e75;
+    --palette-secondary1: #3daee9;
+    
+    --meun:var(--palette-accent2);
+    --background: var(--palette-base0);
+    --task-bg: var(--palette-base0);
+    --pane-bg: var(--palette-base0);
+    --input-bg: var(--palette-base0);
+    --input-button-bg: var(--palette-accent2);
+    --input-active: var(--palette-secondary1);
+    --input-fg: var(--palette-base5);
+    --topbar-bg: var(--palette-accent2);
+
+    --my-message-bg: var(--palette-base2);
+    --their-message-bg: var(--palette-base3);
+}
+
+body
+{
+    font-family: "Fira Sans", sans-serif;
+    font-size: var(--font-size);
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+header
+{
+    background-color: var(--topbar-bg);
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: var(--topbar);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+main
+{
+    background-color: var(--background);
+    height: calc(100% - var(--topbar));
+    left: var(--nav-width);
+    position: absolute;
+    top: var(--topbar);;
+    width: calc(100% - var(--nav-width));
+}
+
+nav
+{
+    background-color: var(--meun);
+    font-size: 15px;
+    color: var(--dark);
+    height: calc(100% - var(--topbar));
+    position: absolute;
+    top: var(--topbar);
+    width: var(--nav-width);
+}
+
+#user_add-task_button{
+    height: var(--button-height);
+    width: var(--button-width);
+    right: 0;
+    position: absolute;
+    background-color: var(--palette-accent1);
+}
+
+.task-box{
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    height: var(--button-height);
+    width: calc(100% - var(--button-width));
+    position: absolute;
+}
+.from-user{
+    top: var(--button-height);
+    background: var(--palette-accent1);
+    height: var(--task-height);
+    width: calc(100% - var(--button-width));
+    position: relative;
+    font-size: 16px;
+}
+.finish{
+    background-color: var(--palette-base0);
+    top: var(--button-height);
+    height: var(--task-height);
+    width: var(--button-width);
+    left: 0;
+    margin-top: 3px;
+    position: relative;
+}
+
+nav ul{
+    float: left;
+    box-sizing: border-box;
+    height: calc(100% - 2.5em);
+    line-height: 1.6em;
+    list-style: none;
+    margin: 0;
+    overflow-y: auto;
+    padding: 0;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+}
+nav li{
+    cursor: pointer;
+    height: 1.6em;
+    overflow: hidden;
+    padding: 0.25em;
+}
+
+nav li[aria-selected=true] {
+    cursor: default;
+}
+  
+nav li:hover,
+nav li[aria-selected=true] {
+    background: var(--palette-base0);
+    color: var(--card-bg);
+    font-weight: bold;
+}
+#placeholder{
+    top: var(--topbar);
+    height: var(--button-height);
+    width: 100%;
+    position: absolute;
+}
