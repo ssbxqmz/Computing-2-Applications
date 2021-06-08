@@ -1,38 +1,37 @@
 <!doctype html>
 <html lang="en-gb">
 <meta charset="utf-8">
-<title>Chat with Robots!</title>
+<title>Guess Word Game!</title>
 <link rel="stylesheet" href="default.css">
 <link rel="shortcut icon" href="favicon.png">
 <script type="module" src="main.js"></script>
 
 <header>
-    <h1>Chat with Robots 🤖</h1>
+    <h1>Welcome to Guess Word Game!</h1>
 </header>
 
 <main>
     <h2 id="bot-title" class="message-heading"></h2>
-    <section class="message-pane" id="messages">
-        <template id="my-message">
-            <div name="message" class="from-me">Hello Robot</div>
+    <canvas id = "man" width="300" height = "300"></canvas>
+    <section>
+        <template id="message">
+            <div name="message" class="from-user">from user</div>
         </template>
         
-        <template id="their-message">
-            <div name="message" class="from-them">Hello Humon</div>
+        <template id="check response">
+            <div name="message" class="answer">from system</div>
         </template>
 
     </section>
     <section>
         <textarea id="composition" class="composition-pane"
-            aria-label="Compose message" placeholder="Say hello…"></textarea>
-        <button id="send-button" class="composition-send" title="Send Message">🦾</button>
+            aria-label="Compose message" placeholder="Start guess from a letter...">hi</textarea>
+        <button id="send-button" class="composition-send" title="Send Message">Yes</button>
     </section>
 </main>
 
-<nav>
-    <ul id="bot-list" role="listbox" aria-label="Bots online">
-        <template id="bot-item">
-            <li name="bot" role="option" tabindex="0"> AgreeBot </li>
-        </template>
+<aside>
+    <h1>History</h1>
+    <ul id="history_list">
     </ul>
-</nav>
+</aside>

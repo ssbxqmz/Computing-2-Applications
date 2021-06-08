@@ -1,22 +1,19 @@
+import Check from "./check.js";
+
 const add_task = document.getElementById("user_add-task_button");
 const user_new_task_button = document.getElementById("user_new_task_button");
 const task_user_input = document.getElementById("task");
 const tasks = document.getElementById("tasks");
-var template = document.getElementById("user-task");
-var finish_button =  template.content.querySelector("[id=finish-button]");
-var task_finish =  template.content.querySelector("[id=task_finish]");
+var user_input = [];
 
+const history_list = document.getElementById("history_list");
+
+let check_bot = Check.play_round;
 
 const cloneTemplate = function (id) {
     return document.importNode(document.getElementById(id).content, true);
 };
 
-const delete_task = function(id){
-    return template.content.querySelector("[id=task_finish]").setAttribute("disabled", true);
-};
-user_new_task_button.onclick = function () {
-    return console.log(add_task)
-};
 
 add_task.onclick = function () {
     console.log(task_user_input.value);
@@ -26,8 +23,32 @@ add_task.onclick = function () {
         "[name=submitted-task]"
     ).textContent = user_task;
     tasks.appendChild(task_new_text);
+
+
+
+
+    const check = Check.play_round(task_user_input.value);
+    const check_respond = cloneTemplate("check-box");
+    check_respond.querySelector(
+        "[name=submitted-task]"
+    ).textContent = check;
+    tasks.appendChild(check_respond);
+
+
+
+
+    const chance = Check.chance(task_user_input.value);
+    const li = document.createElement("li");
+    li.textContent = (
+        `You have ${chance} chance left`
+    );
+
+    history_list.append(li);
+
+
+
+    
+    user_input.push(task_user_input.value);
+    
 };
 
-finish_button.onclick = function() {
-   const finish = ;
-};
