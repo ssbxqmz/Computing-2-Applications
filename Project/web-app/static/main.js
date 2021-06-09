@@ -1,7 +1,14 @@
 import Check from "./check.js";
+import Word_category from "./word category.js";
+
+const categories = [  
+    ["imperial","college", "london"],
+["univercity","of", "oxford"]
+];
 
 const add_task = document.getElementById("user_add-task_button");
-const user_new_task_button = document.getElementById("user_new_task_button");
+const category = document.getElementById("category");
+const cate_info = document.getElementById("cate-info");
 const task_user_input = document.getElementById("task");
 const tasks = document.getElementById("tasks");
 var user_input = [];
@@ -45,10 +52,20 @@ add_task.onclick = function () {
 
     history_list.append(li);
 
-
-
-    
-    user_input.push(task_user_input.value);
-    
 };
 
+
+category.onclick = function () {
+    if (categories[0].includes(Word_category.word())) {
+        const li = document.createElement("li");
+        li.textContent = (
+            "IC"
+        );
+        cate_info.append(li);
+    } else if (categories[1].includes(Word_category.word())) {
+        const lii = document.createElement("li");
+        lii.textContent = (
+            "Ox"
+        );
+        }
+  };
