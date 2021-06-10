@@ -12,7 +12,6 @@ Word_category.word = function () {
         Math.floor(Math.random() * chosenCategory.length)
     ];
     return chosenWord;
-
 };
 
 Word_category.letter = function () {
