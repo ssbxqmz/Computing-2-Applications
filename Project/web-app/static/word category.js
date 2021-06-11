@@ -14,8 +14,8 @@ Word_category.word = function () {
     return chosenWord;
 };
 
-Word_category.letter = function () {
-    const letter = Word_category.word().split("");
+Word_category.letter = function (input) {
+    const letter = input.split("");
     return letter;
 };
 

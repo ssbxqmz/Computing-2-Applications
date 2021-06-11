@@ -1,5 +1,6 @@
 import Check from "./check.js";
 import Word_category from "./word category.js";
+import Count from "./count.js";
 
 const categories = [  
     ["imperial","college", "london"],
@@ -17,32 +18,36 @@ const guess_word = document.getElementById("guess by word");
 
 const history_list = document.getElementById("history_list");
 
-let check_bot = Check.play_round;
-
 const cloneTemplate = function (id) {
     return document.importNode(document.getElementById(id).content, true);
 };
 
 const word = Word_category.word();
+let word_array = Word_category.letter(word);
 let  chance = 5;
 
 add_task.onclick = function () {
     console.log(task_user_input.value);
     const user_task = task_user_input.value;
+    const count = Count.number(word_array,user_task);
     const index = word.indexOf(user_task);
     if (index !== -1) {
         console.log(task_user_input.value);
         const task_new_text = cloneTemplate("user-task");
-        task_new_text.querySelector(
-            "[name=submitted-task]"
-        ).textContent = user_task;
-        tasks.appendChild(task_new_text);
-        if (user_task === word){
-            alert("You win the game!");
-            let answer = confirm("Do you want to start a new game");
-            if (answer === true) {
-                location.reload();
-            }
+        if (count === 1) {
+            task_new_text.querySelector(
+                "[name=submitted-task]"
+            ).textContent = ( 
+                ` ${user_task} appears ${count} time in the word`
+                 );
+            tasks.appendChild(task_new_text);
+        } else {
+            task_new_text.querySelector(
+                "[name=submitted-task]"
+            ).textContent = ( 
+                ` ${user_task} appears ${count} times in the word`
+                );
+            tasks.appendChild(task_new_text);
         }
 
     } else {
@@ -60,5 +65,31 @@ add_task.onclick = function () {
         }
     }
 
+
+};
+
+guess_word.onclick = function() {
+    console.log(task_user_input.value);
+    const user_task = task_user_input.value;
+    if (user_task === word){
+        alert("You win the game!");
+        let answer = confirm("Do you want to start a new game");
+        if (answer === true) {
+            location.reload();
+        }
+    }else{
+        chance = chance - 1;
+
+        if (chance >= 0){
+            const chance_li = document.createElement("li");
+            chance_li.textContent = (
+            `You have ${chance} chance left`
+            );
+            chance_left.append(chance_li);
+        } else{
+            add_task.setAttribute("disabled",true);
+
+        }
+    }
 
 };
