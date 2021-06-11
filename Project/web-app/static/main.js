@@ -1,11 +1,8 @@
 import Check from "./check.js";
 import Word_category from "./word category.js";
 import Count from "./count.js";
+import wordCategory from "./word category.js";
 
-const categories = [  
-    ["imperial","college", "london"],
-["univercity","of", "oxford"]
-];
 const start = document.getElementById("start");
 const add_task = document.getElementById("user_add-task_button");
 const category = document.getElementById("category");
@@ -14,7 +11,8 @@ const task_user_input = document.getElementById("task");
 const tasks = document.getElementById("tasks");
 const chance_left = document.getElementById("chance left");
 const guess_word = document.getElementById("guess by word");
-
+const hint = document.getElementById("hint");
+const length_list = document.getElementById("length_list");
 
 const history_list = document.getElementById("history_list");
 
@@ -23,9 +21,24 @@ const cloneTemplate = function (id) {
 };
 
 const word = Word_category.word();
+const category_hint = wordCategory.category(word);
 let word_array = Word_category.letter(word);
 let  chance = 5;
+hint.onclick = function () {
+    const word_length = word.length;
+    const length_hint = document.createElement("li");
+    length_hint.textContent = (
+        `There are ${word_length} letters in the word`
+    );
+    length_list.append(length_hint);
 
+
+    const category_list = document.createElement("li");
+    category_list.textContent = (
+        `${category_hint}`
+    );
+    cate_info.append(category_list);
+};
 add_task.onclick = function () {
     console.log(task_user_input.value);
     const user_task = task_user_input.value;
@@ -55,6 +68,7 @@ add_task.onclick = function () {
         } else {
             chance = chance - 1;
 
+
             if (chance >= 0){
                 const chance_li = document.createElement("li");
                 chance_li.textContent = (
@@ -63,6 +77,7 @@ add_task.onclick = function () {
                 chance_left.append(chance_li);
             } else{
                 add_task.setAttribute("disabled",true);
+                alert(`the word is ${word}`);
             }
         }
     }
