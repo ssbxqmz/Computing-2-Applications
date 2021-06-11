@@ -31,40 +31,41 @@ add_task.onclick = function () {
     const user_task = task_user_input.value;
     const count = Count.number(word_array,user_task);
     const index = word.indexOf(user_task);
-    if (index !== -1) {
-        console.log(task_user_input.value);
-        const task_new_text = cloneTemplate("user-task");
-        if (count === 1) {
-            task_new_text.querySelector(
-                "[name=submitted-task]"
-            ).textContent = ( 
-                ` ${user_task} appears ${count} time in the word`
-                 );
-            tasks.appendChild(task_new_text);
-        } else {
-            task_new_text.querySelector(
-                "[name=submitted-task]"
-            ).textContent = ( 
-                ` ${user_task} appears ${count} times in the word`
+    if (user_task.length > 1) {
+        alert("try guess word button");
+    } else{
+        if (index !== -1) {
+            console.log(task_user_input.value);
+            const task_new_text = cloneTemplate("user-task");
+            if (count === 1) {
+                task_new_text.querySelector(
+                    "[name=submitted-task]"
+                ).textContent = ( 
+                    ` ${user_task} appears ${count} time in the word`
                 );
-            tasks.appendChild(task_new_text);
-        }
+                tasks.appendChild(task_new_text);
+            } else {
+                task_new_text.querySelector(
+                    "[name=submitted-task]"
+                ).textContent = ( 
+                    ` ${user_task} appears ${count} times in the word`
+                    );
+                tasks.appendChild(task_new_text);
+            }
+        } else {
+            chance = chance - 1;
 
-    } else {
-        chance = chance - 1;
-
-        if (chance >= 0){
-            const chance_li = document.createElement("li");
-            chance_li.textContent = (
-            `You have ${chance} chance left`
-            );
-            chance_left.append(chance_li);
-        } else{
-            add_task.setAttribute("disabled",true);
-
+            if (chance >= 0){
+                const chance_li = document.createElement("li");
+                chance_li.textContent = (
+                `You have ${chance} chance left`
+                );
+                chance_left.append(chance_li);
+            } else{
+                add_task.setAttribute("disabled",true);
+            }
         }
     }
-
 
 };
 
