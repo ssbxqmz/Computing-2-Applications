@@ -2,8 +2,10 @@ const Word_category = Object.create(null);
 
 Word_category.word = function () {
     const word_array = [
-        ["imperial", "college", "london"],
-        ["univercity", "of", "oxford" ]
+        ["london", "manchester", "birmingham", "leeds", "glasgow"],
+        ["new york city", "los angeles", "chicago", "houston", "phoenix"],
+        ["beijing", "shanghai", "tianjin", "shenzhen", "guangzhou"],
+        ["Toronto", "Montréal", "Vancouver", "Calgary", "Edmonton"]
     ];
     const chosenCategory = word_array[
         Math.floor(Math.random() * word_array.length)
