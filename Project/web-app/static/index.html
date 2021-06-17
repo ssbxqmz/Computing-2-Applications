@@ -7,58 +7,34 @@
 <script type="module" src="main.js"></script>
 
 <header>
-    <h1>Guess the word</h1>
+    <h1 id = "greeting" style="display: block;">Guess the word</h1>
+    <textarea id = "id" style="display: block;">name</textarea>
+    <button id="start" style="display: block;">Start Button</button>
+    <ul id = "word">
+    </ul>
+
 </header>
 
-<main>
-    <button id="start">Start Button</button>
-    <section id = >
-        <button id = a>a</button>
-        <button id = b>b</button>
-        <button id = c>c</button>
-        <button id = d>d</button>
-        <button id = e>e</button>
-        <button id = f>f</button>
-        <button id = g>g</button>
-        <button id = h>h</button>
-        <button id = i>i</button>
-        <button id = j>j</button>
-        <button id = k>k</button>
-        <button id = l>l</button>
-        <button id = m>m</button>
-        <button id = n>n</button>
-        <button id = o>o</button>
-        <button id = p>p</button>
-        <button id = q>q</button>
-        <button id = r>r</button>
-        <button id = s>s</button>
-        <button id = t>t</button>
-        <button id = u>u</button>
-        <button id = v>v</button>
-        <button id = w>w</button>
-        <button id = x>x</button>
-        <button id = y>y</button>
-        <button id = z>z</button>
-    </section>
-    <section>
+<main id = "main" style="display: none;">
+    <section id="hint_area">
         <button id="hint">Hint</button>
         <ul id = "length_list">
         </ul>
         <ul id ="cate-info"></ul>
     </section>
-    <section class="task-pane" id="tasks">
+    <section class="guess-pane" id="guess">
         <template id="user-task">
             <ul id = "task_finish" name="submitted-task" class="from-user">Task</ul>
         </template>
     <section>
-        <textarea id ="task" class="task-box" placeholder="using lower class letters"></textarea>
-        <button id="user_add-task_button"> Guess</button>
+        <textarea id ="guess_box" class="task-box" placeholder="using lower class letters"></textarea>
+        <button id="guess_button"> Guess</button>
         <button id = "guess by word">Guess Word</button>
         <h2>Correct Letter</h2>
     </section>
 </main>
 
-<aside>
+<aside id = "aside" style="display: none;">
     <h1>History</h1>
     <ul id="history_list">
     </ul>
