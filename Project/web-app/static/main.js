@@ -11,8 +11,8 @@ const category = document.getElementById("category");
 const cate_info = document.getElementById("cate-info");
 const guess_input = document.getElementById("guess_box");
 const guess = document.getElementById("guess");
-const chance_left = document.getElementById("chance left");
-const guess_word = document.getElementById("guess by word");
+const chance_left = document.getElementById("chance_left");
+const guess_word = document.getElementById("guess_by_word");
 const hint = document.getElementById("hint");
 const length_list = document.getElementById("length_list");
 const word_ = document.getElementById("word");
@@ -36,11 +36,9 @@ start.onclick = function(){
 
     Ajax.query({
         "type": "identify",
-        "message": name_id.value
     }).then(function (response_object) {
         const word_li = document.createElement("li");
-        word_li.textContent = (
-            `Welcome ${response_object}`);
+        word_li.textContent = (response_object.response);
         word_.append(response_object);
     });
 };
@@ -134,6 +132,5 @@ guess_word.onclick = function() {
     }
 
 };
-
 
 

@@ -1,6 +1,11 @@
+:root{
+    --text-height: 25%;
+    --text-top:50%;
+    --text-left: 50%;
+}
 body
 {
-    background : #566270;
+    background: #E0E3DA;
 }
 
 header{
@@ -15,20 +20,67 @@ header{
     transform: translate(-50%,-50%);
 }
 
-#hint_area{
-    position: absolute;
-    top: 10%;
-    left: 10%;
-}
-.guess_pane{
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    height: 200px;
-    top:50%;
-    left:50%;
+.task-box{
+    box-sizing: border-box;
+    resize: none;
+    border: 0;
+    margin: 0;
+    height: var(--text-height);
+    width: 50%;
+    top:var(--text-top);
+    left:var(--text-left);
     transform: translate(-50%,-50%);
+    position: absolute;
 }
-aside{
-    background: #9DC8C8;
+#guess_button{
+    bottom: 30%;
+    height: 7%;
+    width: 25%;
+    left: 25%;
+    position: absolute;
+    color: #A593E0;
 }
+#guess_by_word{
+    bottom: 30%;
+    height: 7%;
+    width: 25%;
+    left: 50%;
+    position: absolute;
+    color: #A593E0;
+}
+
+#hint{
+    bottom: 70%;
+    height: 5%;
+    width: 18%;
+    left: 78%;
+    position: absolute;
+    color: #A593E0;
+}
+#length_list{
+    bottom: 60%;
+    height: 5%;
+    width: 25%;
+    left: 75%;
+    position: absolute;
+    color: #A593E0;
+}
+
+#cate-info{
+    bottom: 55%;
+    height: 5%;
+    width: 25%;
+    left: 75%;
+    position: absolute;
+    color: #A593E0;
+}
+.from-user{
+    top: 10%;
+    left: 2%;
+    background: #D499B9;
+    height: 25px;
+    width: 18%;
+    position: relative;
+    font-size: 16px;
+}
+

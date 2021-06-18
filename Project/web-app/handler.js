@@ -19,15 +19,12 @@ Handler.identify = function (request_object, session_data) {
 
     return Promise.resolve(
         {
-            "response": `Identified as ${name}`
+            "response": request_object.response(
+                `Identified as ${name}`
+            )
         }
     );
 };
-Handler.message = function (request_object){
-    return Promise.resolve({
-        
-    })
-}
 
 const game_length = 5;
 const list_of_games = [];

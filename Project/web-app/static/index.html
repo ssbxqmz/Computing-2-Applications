@@ -8,7 +8,7 @@
 
 <header>
     <h1 id = "greeting" style="display: block;">Guess the word</h1>
-    <textarea id = "id" style="display: block;">name</textarea>
+    <textarea id = "id" style="display: block;" placeholder="put your name in"></textarea>
     <button id="start" style="display: block;">Start Button</button>
     <ul id = "word">
     </ul>
@@ -18,18 +18,17 @@
 <main id = "main" style="display: none;">
     <section id="hint_area">
         <button id="hint">Hint</button>
-        <ul id = "length_list">
-        </ul>
+        <ul id = "length_list"></ul>
         <ul id ="cate-info"></ul>
     </section>
     <section class="guess-pane" id="guess">
         <template id="user-task">
             <ul id = "task_finish" name="submitted-task" class="from-user">Task</ul>
         </template>
-    <section>
+    <section class="guess-input">
         <textarea id ="guess_box" class="task-box" placeholder="using lower class letters"></textarea>
-        <button id="guess_button"> Guess</button>
-        <button id = "guess by word">Guess Word</button>
+        <button id="guess_button"> Guess letter</button>
+        <button id = "guess_by_word">Guess Word</button>
         <h2>Correct Letter</h2>
     </section>
 </main>
@@ -38,5 +37,5 @@
     <h1>History</h1>
     <ul id="history_list">
     </ul>
-    <ul id = "chance left"></ul>
+    <ul id = "chance_left"></ul>
 </aside>
