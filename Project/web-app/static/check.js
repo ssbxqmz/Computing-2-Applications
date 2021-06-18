@@ -29,5 +29,13 @@ Check.correct = function(message){
     }
 };
 
+Check.noinfo = function(info){
+    if (info = ""){
+        return alert("Put value in!")
+    }
+    else{
+        true
+    }
+}
 
 export default Object.freeze(Check);
