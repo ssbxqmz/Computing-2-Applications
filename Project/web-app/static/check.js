@@ -1,4 +1,4 @@
-import Word_category from "./word category.js";
+import Word_category from "./word_category.js";
 const Check = Object.create(null);
 var chance = 5;
 const word = "yes";

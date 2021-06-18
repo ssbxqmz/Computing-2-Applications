@@ -20,7 +20,6 @@
             "request": "launch",
             "reAttach": true,
             "reloadOnAttach": true,
-            "file": "${fileDirname}/index.html",
             "url": "http://localhost:8080/index.html",
             "webRoot": "${workspaceFolder}/web-app/static",
             "preferences": {

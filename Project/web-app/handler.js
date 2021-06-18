@@ -1,6 +1,6 @@
 const Handler = Object.create(null);
 
-import wordCategory from "./word category";
+import wordCategory from "./static/word_category.js";
 
 Handler.word = function (request_object) {
     return Promise.resolve({
@@ -9,6 +9,8 @@ Handler.word = function (request_object) {
         )
     })
 };
+
+let contacts = [];
 
 Handler.identify = function (request_object, session_data) {
     const name = request_object.name;
@@ -19,7 +21,7 @@ Handler.identify = function (request_object, session_data) {
 
     return Promise.resolve(
         {
-            "response": request_object.response(
+            "response": (
                 `Identified as ${name}`
             )
         }

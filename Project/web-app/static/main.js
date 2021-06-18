@@ -1,8 +1,8 @@
 
 import Check from "./check.js";
-import Word_category from "./word category.js";
+import Word_category from "./word_category.js";
 import Count from "./count.js";
-import wordCategory from "./word category.js";
+import wordCategory from "./word_category.js";
 import Ajax from "./ajax.js";
 
 const start = document.getElementById("start");
@@ -26,17 +26,18 @@ const cloneTemplate = function (id) {
     return document.importNode(document.getElementById(id).content, true);
 };
 
-start.onclick = function(){
+start.onclick = function (){
     console.log(name_id);
     main_appear.style.display = "block";
     aside_appear.style.display = "block";
     name_id.style.display = "none";
     start.style.display = "none";
-    greeting.style.display="none";
+    greeting.style.display = "none";
 
     Ajax.query({
-        "type": "identify",
+        "type": "identify"
     }).then(function (response_object) {
+        console.log(response_object);
         const word_li = document.createElement("li");
         word_li.textContent = (response_object.response);
         word_.append(response_object);
